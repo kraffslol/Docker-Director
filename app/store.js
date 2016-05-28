@@ -45,5 +45,6 @@ export default function configureStore(initialState = {}, history) {
 
   // Initialize it with no other reducers
   store.asyncReducers = {};
+  store.asyncSagas = {};
   return store;
 }

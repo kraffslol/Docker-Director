@@ -1,0 +1,39 @@
+:global .fixedDataTableLayout_main {
+  border-style: none;
+}
+
+:global .fixedDataTableLayout_header {
+  border-bottom-style: none;
+}
+
+:global .fixedDataTableCellLayout_main {
+  border-right-style: none;
+}
+
+:global .fixedDataTableLayout_hasBottomBorder {
+  border-bottom-style: none;
+}
+
+:global .fixedDataTableLayout_footer {
+  border-top-style: none;
+}
+
+:global .fixedDataTableColumnResizerLineLayout_main {
+  border-right-style: none;
+}
+
+:global .fixedDataTableRowLayout_fixedColumnsDivider {
+  border-left-style: none;
+}
+
+
+:global .public_fixedDataTable_bodyRow {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: lightgrey;
+}
+
+:global .fixedDataTableLayout_header {
+  color: #FE8564;
+  font-weight: 600;
+}

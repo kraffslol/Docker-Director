@@ -12,6 +12,10 @@
  */
 
 import React from 'react';
+import styles from './styles.css';
+import classNames from 'classnames';
+
+import NavBar from 'components/NavBar'
 
 /* eslint-disable react/prefer-stateless-function */
 export default class App extends React.Component {
@@ -22,8 +26,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.props.children}
+      <div className={ styles.wrapper }>
+        <NavBar />
+        <div className={ styles.body }>
+          {this.props.children}
+        </div>
       </div>
     );
   }

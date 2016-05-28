@@ -31,6 +31,11 @@ module.exports = (options) => ({
       test: /\.css$/,
       include: /node_modules/,
       loaders: ['style-loader', 'css-loader'],
+    },
+    {
+      test: /\.less$/,
+      include: /node_modules/,
+      loaders: ['style-loader', 'css-loader' ,'less-loader']
     }, {
       test: /\.jpe?g$|\.gif$|\.png$|\.svg$/i,
       loader: 'url-loader?limit=10000',

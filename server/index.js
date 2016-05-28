@@ -4,13 +4,20 @@ const express = require('express');
 const logger = require('./logger');
 const ngrok = require('ngrok');
 
+const API = require('./middlewares/apiMiddleware');
 const frontend = require('./middlewares/frontendMiddleware');
 const isDev = process.env.NODE_ENV !== 'production';
 
 const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+
+app.get('/asdf', function (req, res) {
+  res.send('GET request to the homepage');
+});
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
-// app.use('/api', myApi);
+app.use('/api', API(io));
 
 // Initialize frontend middleware that will serve your JS app
 const webpackConfig = isDev
@@ -22,7 +29,7 @@ app.use(frontend(webpackConfig));
 const port = process.env.PORT || 3000;
 
 // Start your app.
-app.listen(port, (err) => {
+server.listen(port, (err) => {
   if (err) {
     return logger.error(err);
   }
